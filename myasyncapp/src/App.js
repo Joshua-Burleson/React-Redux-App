@@ -18,6 +18,7 @@ function App() {
     <Provider store={store}>
       <div className="App">
         <header className="App-header">
+          <h1>RandoManga</h1>
           <AppWrapper />
         </header>
       </div>

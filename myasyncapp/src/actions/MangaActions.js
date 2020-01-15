@@ -17,5 +17,8 @@ export const newManga = manga => dispatch => {
                 }
                 dispatch({type: 'NEW_MANGA', payload: mangaData});
             })
-         .catch(err => console.log(err));
+         .catch(err =>{ 
+             console.log("Here's your error: ", err.message);
+             dispatch({type:'API_ERROR', payload: err.message});
+            });
 };

@@ -1,6 +1,10 @@
 const initialState = {
     loading: false,
     initial: true,
+    apiError: {
+        status: false,
+        error: false
+    },
     currentManga: {
         id: 'x',
         link: '',
@@ -14,9 +18,11 @@ const initialState = {
 export const mangaReducer = (state = initialState, action) => {
     switch(action.type){
         case('NEW_MANGA'): 
-                return {...state, loading: false, currentManga: action.payload};
+                return {...state, loading: false, apiError: {status: false, error: false}, currentManga: action.payload};
         case('LOADING'):
                 return {...state, initial: false, loading: true};
+        case('API_ERROR'):
+                return {...state, loading: false, apiError: {status: true, error: action.payload}}
         default: 
                 return {...state};
     }
