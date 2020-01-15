@@ -8,7 +8,7 @@ const MangaCard = props => {
     return(
         <CardWrapper>
             <MangaImage src={`${props.manga.image}`} />
-            <h2><a target="_blank" href={`${props.manga.link}`}>{props.manga.title} &raquo;</a></h2>
+            <h2><a target="_blank" rel="noopener noreferrer" href={`${props.manga.link}`}>{props.manga.title} &raquo;</a></h2>
             <h4>Score: {props.manga.score}</h4>
             <p>Synopsis: {props.manga.synopsis}</p>
         </CardWrapper>
